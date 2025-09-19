@@ -8,7 +8,7 @@
 <style>
     body { font-family: 'Segoe UI', sans-serif; background: #f3faf3; margin:0; padding:0;}
     .container {
-        max-width: 700px;
+        max-width: 720px;
         margin: 50px auto;
         padding: 40px;
         background: #fff;
@@ -40,6 +40,7 @@
         margin-top: 20px;
     }
     .home-btn:hover { background: #9ccc65; }
+    .section-title { font-weight: bold; margin-top: 10px; color:#2e7d32; }
 </style>
 </head>
 <body>
@@ -64,7 +65,6 @@
                 <option value="Active">💪 Active</option>
             </select>
 
-            <!-- Diet Preference Dropdown -->
             <select name="preference" required>
                 <option value="">Dietary Preference</option>
                 <option value="Vegetarian">🥦 Vegetarian</option>
@@ -74,9 +74,9 @@
             </select>
 
             <input type="text" name="allergy" placeholder="Allergies (if any)">
-            <input type="text" name="budget" placeholder="Budget (optional)">
+            <input type="text" name="budget" placeholder="Budget (₹ per day, optional)">
 
-            <!-- Indian States Dropdown with search -->
+            <!-- State Dropdown -->
             <select class="state-select" name="region" required>
                 <option value="">Select Your State</option>
                 <option value="Delhi">Delhi</option>
@@ -103,6 +103,11 @@
                 <option value="Jammu and Kashmir">Jammu & Kashmir</option>
                 <option value="Other">Other</option>
             </select>
+
+            <div class="section-title">📏 Body Composition Inputs</div>
+            <input type="number" name="waist" placeholder="Waist (cm)" required>
+            <input type="number" name="neck" placeholder="Neck (cm)" required>
+            <input type="number" name="hip" placeholder="Hip (cm - only for women)">
 
             <button type="submit">✨ Generate My Diet Plan</button>
         </form>
