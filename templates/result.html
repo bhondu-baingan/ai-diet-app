@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Diet Plan</title>
+<style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f3faf3; margin:0; padding:0; }
+    .container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    h1 { text-align: center; color: #388e3c; }
+    p, li { font-size: 1.05em; line-height: 1.6; }
+    ul { padding-left: 20px; }
+    .back-btn, .home-btn {
+        display: inline-block;
+        margin: 20px 10px 0;
+        padding: 12px 20px;
+        background: #81c784;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+    }
+    .back-btn:hover, .home-btn:hover { background: #66bb6a; }
+    .ai-text { white-space: pre-wrap; word-wrap: break-word; margin-top:20px; }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>🥗 Your Weekly Indian Diet Plan</h1>
+    <div class="ai-text">{{ ai_response }}</div>
+    <div style="text-align:center;">
+        <a href="/form" class="back-btn">🔄 Try Again</a>
+        <a href="/" class="home-btn">🏠 Home</a>
+    </div>
+</div>
+</body>
+</html>
