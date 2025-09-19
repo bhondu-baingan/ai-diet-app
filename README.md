@@ -30,7 +30,7 @@ The app emphasizes **regional-specific Indian dishes**, ensuring healthier and c
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/indian-diet-ai.git
+git clone https://github.com/bhondu-baingan/ai-diet-app
 cd indian-diet-ai
 ```
 ### 2️⃣ Create & activate virtual environment
@@ -52,7 +52,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### 4️⃣ Set up environment variables
-Create a .env file in the project root and add:
+Create a file called .env in the project folder and put:
 
 ```env
 GROQ_API_KEY=your_api_key_here
