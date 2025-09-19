@@ -3,43 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indian Diet AI</title>
+<title>Diet Plan Form</title>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        background: #f3faf3;
-        margin: 0; padding: 0;
-    }
+    body { font-family: 'Segoe UI', sans-serif; background: #f3faf3; margin:0; padding:0;}
     .container {
-        max-width: 700px;
-        margin: 100px auto;
+        max-width: 720px;
+        margin: 50px auto;
         padding: 40px;
-        background: #ffffff;
+        background: #fff;
         border-radius: 14px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        text-align: center;
     }
-    h1 { color: #388e3c; font-size: 2em; }
-    p { font-size: 1.2em; color: #444; }
-    a.button {
-        display: inline-block;
-        margin-top: 30px;
-        padding: 14px 34px;
+    h2 { color: #388e3c; text-align:center; margin-bottom:20px;}
+    form { display: flex; flex-direction: column; gap: 18px; }
+    input, select { padding: 12px; font-size: 1em; border-radius: 8px; border: 1px solid #ccc; }
+    button {
+        padding: 14px;
+        font-size: 1.1em;
         background: #81c784;
         color: #fff;
-        text-decoration: none;
-        font-size: 1.1em;
+        border: none;
         border-radius: 10px;
+        cursor: pointer;
         transition: background 0.3s;
     }
-    a.button:hover { background: #66bb6a; }
+    button:hover { background: #66bb6a; }
+    .home-btn {
+        display: inline-block;
+        text-align: center;
+        padding: 10px 20px;
+        background: #aed581;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    .home-btn:hover { background: #9ccc65; }
+    .section-title { font-weight: bold; margin-top: 10px; color:#2e7d32; }
 </style>
 </head>
 <body>
     <div class="container">
-        <h1>🥗 Indian Diet AI</h1>
-        <p>Get your personalized Indian diet plan<br>based on age, body, lifestyle & region.</p>
-        <a href="/form" class="button">✨ Start My Diet Plan</a>
+        <h2>🌿 Enter Your Details</h2>
+        <form action="/form" method="POST">
+            <input type="number" name="height" placeholder="Height (cm)" required>
+            <input type="number" name="weight" placeholder="Weight (kg)" required>
+            <input type="number" name="age" placeholder="Age" required>
+            
+            <select name="gender" required>
+                <option value="">Gender</option>
+                <option value="Male">👨 Male</option>
+                <option value="Female">👩 Female</option>
+            </select>
+
+            <select name="activity" required>
+                <option value="">Activity Level</option>
+                <option value="Sedentary">🛋️ Sedentary</option>
+                <option value="Light">🚶 Light</option>
+                <option value="Moderate">🏃 Moderate</option>
+                <option value="Active">💪 Active</option>
+            </select>
+
+            <select name="preference" required>
+                <option value="">Dietary Preference</option>
+                <option value="Vegetarian">🥦 Vegetarian</option>
+                <option value="Non-Vegetarian">🍗 Non-Vegetarian</option>
+                <option value="Vegan">🌱 Vegan</option>
+                <option value="Eggetarian">🥚 Eggetarian</option>
+            </select>
+
+            <input type="text" name="allergy" placeholder="Allergies (if any)">
+            <input type="text" name="budget" placeholder="Budget (₹ per day, optional)">
+
+            <!-- State Dropdown -->
+            <select class="state-select" name="region" required>
+                <option value="">Select Your State</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Assam">Assam</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="Jammu and Kashmir">Jammu & Kashmir</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <div class="section-title">📏 Body Composition Inputs</div>
+            <input type="number" name="waist" placeholder="Waist (cm)" required>
+            <input type="number" name="neck" placeholder="Neck (cm)" required>
+            <input type="number" name="hip" placeholder="Hip (cm - only for women)">
+
+            <button type="submit">✨ Generate My Diet Plan</button>
+        </form>
+        <a href="/" class="home-btn">🏠 Home</a>
     </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.state-select').select2({
+            placeholder: "Select your state",
+            allowClear: true
+        });
+    });
+</script>
 </body>
 </html>
