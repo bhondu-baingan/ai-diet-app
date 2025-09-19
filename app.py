@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request
 from groq import Groq
 import re
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-# Groq API key
-client = Groq(api_key="Enter your key here")
+# Load environment variables
+load_dotenv()
+
+# Groq API key from .env file
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 @app.route('/')
 def home():
